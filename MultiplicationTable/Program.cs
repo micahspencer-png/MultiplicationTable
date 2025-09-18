@@ -6,23 +6,24 @@ namespace MultiplicationTable
     //RCET2265
     //Fall 2025
     //Multiplication Table Program
-    //
+    //https://github.com/micahspencer-png/MultiplicationTable.git
     internal class Program
     {
         static void Main(string[] args)
         {
-            string userInput;
+                //sets variables
+                string userInput;
                 int number = 12;
                 bool quit = false;
             
             do
             {
-                
+                //prompts user for input. informs user that there is a default
                 Console.WriteLine("Type in What Multiplication Table You Wish to See");
                 Console.WriteLine("Press Enter to Use Default 12 x 12");
                 userInput = Console.ReadLine();
                 
-               
+               //runs the multiplication table if there is a number it can use
                 try
                 {
                     number = int.Parse(userInput);
@@ -37,6 +38,8 @@ namespace MultiplicationTable
      
                     quit = true;
                 }
+
+                //Prompts user to put in correcct number. Runs default if there is no input
                 catch
                 {
                     if (userInput == "")
@@ -63,6 +66,7 @@ namespace MultiplicationTable
                 }
             } while (quit == false);
 
+            //prompts user to exit program
             Console.WriteLine();
             Console.WriteLine("Press Enter to Quit");
 
