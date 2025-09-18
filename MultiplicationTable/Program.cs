@@ -19,32 +19,56 @@ namespace MultiplicationTable
             {
                 
                 Console.WriteLine("Type in What Multiplication Table You Wish to See");
+                Console.WriteLine("Press Enter to Use Default 12 x 12");
                 userInput = Console.ReadLine();
-                number = int.Parse(userInput);
+                
                
                 try
                 {
-                    
- 
-                    for (int i = 0; i < number + 1; i++)
+                    number = int.Parse(userInput);
+                    for (int i = 1; i < number + 1; i++)
                     {
-                        for (int j = 0; j < number + 1; j++) 
+                        for (int j = 1; j < number + 1; j++) 
                         {
                             Console.Write((i * j).ToString().PadLeft(3) + " | ");
                         }
+                        Console.WriteLine();
                     }
      
                     quit = true;
                 }
                 catch
                 {
-                    Console.WriteLine("Invalid Number. Try Again.");
-                    quit = false;
+                    if (userInput == "")
+                    {
+                        
+                        for (int i = 1; i < number + 1; i++)
+                        {
+                            for (int j = 1; j < number + 1; j++)
+                            {
+                                Console.Write((i * j).ToString().PadLeft(3) + " | ");
+                            }
+                            Console.WriteLine();
+                        }
+
+                        quit = true;
+                    }
+                    else
+                    {
+
+                        Console.WriteLine("Invalid. Try Again");
+                        Console.WriteLine();
+                        quit = false;
+                    }
                 }
-            } while (quit = false);
-            
+            } while (quit == false);
+
+            Console.WriteLine();
+            Console.WriteLine("Press Enter to Quit");
+
             //pause
             Console.Read();
+            
         }
     }
 }
